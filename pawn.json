@@ -1,0 +1,13 @@
+{
+    "user": "ScavengeSurvive",
+    "repo": "door",
+    "entry": "test.pwn",
+    "output": "test.amx",
+    "dependencies": [
+        "sampctl/samp-stdlib",
+        "pawn-lang/YSI-Includes",
+        "samp-incognito/samp-streamer-plugin",
+        "ScavengeSurvive/button"
+    ],
+    "dev_dependencies": ["ScavengeSurvive/test-boilerplate"]
+}
