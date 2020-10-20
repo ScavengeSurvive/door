@@ -54,7 +54,7 @@ enum DOOR_STATE {
 
 forward CreateDoor(
 	model,
-	buttonids[],
+	const buttonids[],
 	Float:px,
  	Float:py,
  	Float:pz,
@@ -363,7 +363,7 @@ static
 
 stock CreateDoor(
 	model,
-	buttonids[],
+	const buttonids[],
 	Float:px,
 	Float:py,
 	Float:pz,
