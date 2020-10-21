@@ -54,7 +54,7 @@ enum DOOR_STATE {
 
 forward CreateDoor(
 	model,
-	const buttonids[],
+	const Button:buttonids[],
 	Float:px,
  	Float:py,
  	Float:pz,
@@ -326,7 +326,7 @@ between OPEN and CLOSED without CLOSING or OPENING in between.
 enum E_DOOR_DATA {
 	door_objectid,
 	door_model,
-	door_buttonArray[MAX_BUTTONS_PER_DOOR],
+	Button:door_buttonArray[MAX_BUTTONS_PER_DOOR],
 	door_buttonCount,
 	door_closeDelay,
 	Float:door_moveSpeed,
@@ -363,7 +363,7 @@ static
 
 stock CreateDoor(
 	model,
-	const buttonids[],
+	const Button:buttonids[],
 	Float:px,
 	Float:py,
 	Float:pz,
@@ -775,7 +775,7 @@ stock DOOR_STATE:GetDoorState(doorid) {
 ==============================================================================*/
 
 
-hook OnButtonPress(playerid, buttonid) {
+hook OnButtonPress(playerid, Button:buttonid) {
 	// todo: optimise with map
 	foreach(new i : door_Index) {
 		for(new j; j < door_Data[i][door_buttonCount]; j++) {
