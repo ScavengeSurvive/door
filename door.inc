@@ -785,7 +785,7 @@ hook OnButtonPress(playerid, Button:buttonid) {
 		}
 	}
 
-	return Y_HOOKS_CONTINUE_RETURN_0;
+	return 0;
 }
 
 hook OnDynamicObjectMoved(objectid) {
@@ -795,7 +795,7 @@ hook OnDynamicObjectMoved(objectid) {
 			_door_onMove(i);
 		}
 	}
-	return Y_HOOKS_CONTINUE_RETURN_0;
+	return 0;
 }
 
 _door_onButton(playerid, doorid) {
