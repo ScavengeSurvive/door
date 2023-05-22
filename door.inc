@@ -323,7 +323,7 @@ between OPEN and CLOSED without CLOSING or OPENING in between.
 ==============================================================================*/
 
 
-enum E_DOOR_DATA {
+static enum E_DOOR_DATA {
 	door_objectid,
 	door_model,
 	Button:door_buttonArray[MAX_BUTTONS_PER_DOOR],
