@@ -40,10 +40,6 @@
 
 #define INVALID_DOOR_ID (-1)
 
-#if !defined STREAMER_TAG_OBJECT
-	#define STREAMER_TAG_OBJECT _
-#endif
-
 enum DOOR_STATE {
 	DOOR_STATE_INVALID = -1, // Invalid door state.
 	DOOR_STATE_OPEN,         // Door is open.
@@ -131,7 +127,7 @@ forward bool:IsValidDoor(doorid);
 Checks if a door is valid.
 */
 
-forward GetDoorObjectID(doorid, &STREAMER_TAG_OBJECT:objectid);
+forward GetDoorObjectID(doorid, &STREAMER_TAG_OBJECT objectid);
 /*
 # Description
 Returns the object ID used for the door.
@@ -328,7 +324,7 @@ between OPEN and CLOSED without CLOSING or OPENING in between.
 
 
 static enum E_DOOR_DATA {
-	STREAMER_TAG_OBJECT:door_objectid,
+	STREAMER_TAG_OBJECT door_objectid,
 	door_model,
 	Button:door_buttonArray[MAX_BUTTONS_PER_DOOR],
 	door_buttonCount,
@@ -514,7 +510,7 @@ stock bool:IsValidDoor(doorid) {
 
 
 // door_objectid
-stock GetDoorObjectID(doorid, &STREAMER_TAG_OBJECT:objectid) {
+stock GetDoorObjectID(doorid, &STREAMER_TAG_OBJECT objectid) {
 	if(!Iter_Contains(door_Index, doorid)) {
 		return 1;
 	}
@@ -792,7 +788,7 @@ hook OnButtonPress(playerid, Button:buttonid) {
 	return 0;
 }
 
-hook OnDynamicObjectMoved(STREAMER_TAG_OBJECT:objectid) {
+hook OnDynamicObjectMoved(STREAMER_TAG_OBJECT objectid) {
 	// todo: optimise with map
 	foreach(new i : door_Index) {
 		if(objectid == door_Data[i][door_objectid]) {
