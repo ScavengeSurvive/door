@@ -816,6 +816,10 @@ _door_onButton(playerid, doorid) {
 	}
 }
 
+timer _door_closeDelay[ door_Data[doorid][door_closeDelay] ](doorid) {
+	CloseDoor(doorid);
+}
+
 _door_onMove(doorid) {
 	if(door_Data[doorid][door_state] == DOOR_STATE_OPENING) {
 		door_Data[doorid][door_state] = DOOR_STATE_OPEN;
@@ -838,10 +842,6 @@ _door_onMove(doorid) {
 
 		CallLocalFunction("OnDoorStateChange", "dd", doorid, _:DOOR_STATE_CLOSED);
 	}
-}
-
-timer _door_closeDelay[ door_Data[doorid][door_closeDelay] ](doorid) {
-	CloseDoor(doorid);
 }
 
 _door_playSoundForAll(sound, Float:x, Float:y, Float:z) {
